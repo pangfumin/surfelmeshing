@@ -286,7 +286,7 @@ __device__  __forceinline__ int WARP_ANY(int predicate, unsigned int member_mask
 #ifdef CUB_USE_COOPERATIVE_GROUPS
     return __any_sync(member_mask, predicate);
 #else
-    return ::__any(predicate);
+    return :: __any_sync(0xFFFFFFFF,predicate);
 #endif
 }
 
@@ -299,7 +299,7 @@ __device__  __forceinline__ int WARP_ALL(int predicate, unsigned int member_mask
 #ifdef CUB_USE_COOPERATIVE_GROUPS
     return __all_sync(member_mask, predicate);
 #else
-    return ::__all(predicate);
+    return ::__all_sync(0xFFFFFFFF,predicate);
 #endif
 }
 
@@ -312,7 +312,7 @@ __device__  __forceinline__ int WARP_BALLOT(int predicate, unsigned int member_m
 #ifdef CUB_USE_COOPERATIVE_GROUPS
     return __ballot_sync(member_mask, predicate);
 #else
-    return __ballot(predicate);
+    return __ballot_sync(0xFFFFFFFF, predicate);
 #endif
 }
 
