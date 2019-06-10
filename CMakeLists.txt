@@ -24,7 +24,7 @@ list(APPEND CUDA_NVCC_FLAGS "-use_fast_math")
 
 # Eigen (external)
 #find_package(Eigen3)
-set(EIGEN3_INCLUDE_DIR /home/pang/software/surfelmeshing/3rdparty/eigen)
+set(EIGEN3_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/3rdparty/eigen)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
 # # OpenMP (external)
