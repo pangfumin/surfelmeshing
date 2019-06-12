@@ -23,7 +23,7 @@ list(APPEND CUDA_NVCC_FLAGS "-Xcompiler -fPIC")
 list(APPEND CUDA_NVCC_FLAGS "-use_fast_math")
 
 # Eigen (external)
-find_package(Eigen3)
+# find_package(Eigen3)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
 # # OpenMP (external)
